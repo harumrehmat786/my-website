@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Musify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <div class="sky"></div>
+      <div class="sakura sakura-a"></div>
+      <div class="sakura sakura-b"></div>
+      <div class="sakura sakura-c"></div>
+      <div class="village">
+        <div class="roof roof-left"></div>
+        <div class="roof roof-center"></div>
+        <div class="roof roof-right"></div>
+        <div class="panel panel-left"></div>
+        <div class="panel panel-center"></div>
+        <div class="panel panel-right"></div>
+      </div>
+
+      <header class="topbar">
+        <button class="control-btn play" data-action="play">Play</button>
+        <button class="control-btn pause" data-action="pause">Pause</button>
+        <button class="control-btn reset" data-action="reset">Reset</button>
+        <button class="control-btn stop" data-action="stop">Stop</button>
+      </header>
+
+      <main class="game-layout">
+        <section class="hero-stage">
+          <div class="countdown-panel">
+            <div class="eq eq-left">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="timer-wrap">
+              <div class="time" id="timeValue">10</div>
+              <div class="label">Seconds Left!</div>
+            </div>
+            <div class="eq eq-right">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="artist-area">
+            <div class="notes notes-one">
+              <span>♪</span>
+              <span>♩</span>
+              <span>♫</span>
+            </div>
+            <div class="notes notes-two">
+              <span>♪</span>
+              <span>♩</span>
+              <span>♫</span>
+            </div>
+
+            <svg class="character" viewBox="0 0 520 440" aria-label="Anime singer illustration" role="img">
+              <defs>
+                <linearGradient id="jacketGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#1c1d2d"/>
+                  <stop offset="50%" stop-color="#111421"/>
+                  <stop offset="100%" stop-color="#2a2d3f"/>
+                </linearGradient>
+                <linearGradient id="shirtGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#f7d16a"/>
+                  <stop offset="100%" stop-color="#f3b44c"/>
+                </linearGradient>
+                <linearGradient id="skinGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+                  <stop offset="0%" stop-color="#f5d7a6"/>
+                  <stop offset="100%" stop-color="#e9be8c"/>
+                </linearGradient>
+              </defs>
+
+              <g class="figure">
+                <path d="M170 310 L240 210 L300 350 L250 390 L190 390 Z" fill="url(#jacketGrad)"/>
+                <path d="M118 280 C140 220, 215 190, 255 210 L315 220 L340 290 L270 360 L175 360 Z" fill="url(#jacketGrad)"/>
+                <path d="M250 210 L270 175 L295 195 L295 240 L250 210 Z" fill="#ff9f1a"/>
+                <path d="M170 200 L220 170 L248 202 L220 242 L170 240 Z" fill="#ff9f1a"/>
+                <path d="M240 198 L262 168 L305 170 L315 255 L242 248 Z" fill="#ff9f1a"/>
+                <path d="M130 200 L160 212 L165 330 L110 336 Z" fill="#f09114"/>
+                <path d="M305 205 L338 213 L360 335 L310 330 Z" fill="#f09114"/>
+                <path d="M180 305 L233 296 L245 385 L180 390 Z" fill="#0f1320"/>
+                <path d="M250 299 L308 305 L325 390 L255 390 Z" fill="#0f1320"/>
+                <path d="M270 355 L310 330 L345 380 L282 390 Z" fill="#1c2230"/>
+                <circle cx="240" cy="135" r="85" fill="url(#skinGrad)"/>
+                <path d="M170 155 C185 90, 220 60, 298 74 C355 84, 386 152, 366 200 C350 240, 320 276, 270 278 C180 281, 146 225, 170 155 Z" fill="#f7d75a"/>
+                <path d="M168 155 C180 95, 255 80, 315 96 C350 108, 368 142, 360 186 C344 146, 318 118, 282 101 C230 80, 196 109, 168 155 Z" fill="#f3cf45"/>
+                <path d="M182 159 C200 125, 240 111, 299 115 C330 117, 350 132, 354 149 C349 135, 334 121, 312 111 C277 94, 222 97, 182 159 Z" fill="#f1c52e"/>
+                <path d="M205 132 L245 120 L280 133 L250 146 Z" fill="#efb91d" opacity="0.65"/>
+                <path d="M260 130 L301 122 L337 137 L300 149 Z" fill="#efb91d" opacity="0.65"/>
+                <path d="M212 179 C233 169, 252 170, 272 178" stroke="#3b2a17" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M198 200 C220 190, 236 188, 256 195" stroke="#3b2a17" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M146 160 C162 149, 170 151, 176 159" stroke="#111" stroke-width="9" fill="none" stroke-linecap="round"/>
+                <path d="M206 116 L180 88 L162 140" fill="none" stroke="#111" stroke-width="11" stroke-linecap="round"/>
+                <path d="M316 122 L336 93 L351 142" fill="none" stroke="#111" stroke-width="11" stroke-linecap="round"/>
+                <path d="M178 154 L154 140 L142 170" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+                <path d="M330 149 L370 145 L365 176" fill="none" stroke="#111" stroke-width="8" stroke-linecap="round"/>
+                <path d="M216 148 L186 130" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+                <path d="M298 147 L351 136" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+                <path d="M208 166 L216 182 L192 197" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+                <path d="M304 163 L322 182 L334 164" fill="none" stroke="#111" stroke-width="7" stroke-linecap="round"/>
+                <path d="M188 219 Q240 205 296 220" fill="none" stroke="#e6ae75" stroke-width="4" stroke-linecap="round"/>
+                <circle cx="220" cy="182" r="10" fill="#2a292c"/>
+                <circle cx="287" cy="182" r="10" fill="#2a292c"/>
+                <circle cx="223" cy="178" r="3" fill="#fff"/>
+                <circle cx="290" cy="178" r="3" fill="#fff"/>
+                <path d="M244 199 Q254 211 263 198" stroke="#aa5849" stroke-width="4" fill="none" stroke-linecap="round"/>
+                <path d="M215 228 Q240 246 278 226" stroke="#d99069" stroke-width="10" fill="none" stroke-linecap="round"/>
+                <path d="M160 230 L195 210" stroke="#111" stroke-width="10" stroke-linecap="round"/>
+                <path d="M74 291 C105 255, 143 229, 178 217" stroke="#111" stroke-width="11" stroke-linecap="round" fill="none"/>
+                <path d="M95 288 C140 270, 181 256, 220 252" stroke="#111" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.85"/>
+                <path d="M175 198 C180 136, 195 115, 205 92" stroke="#111" stroke-width="11" stroke-linecap="round" fill="none"/>
+                <path d="M323 198 C316 137, 302 119, 287 96" stroke="#111" stroke-width="11" stroke-linecap="round" fill="none"/>
+                <circle cx="206" cy="118" r="9" fill="#111"/>
+                <circle cx="291" cy="119" r="9" fill="#111"/>
+                <ellipse cx="246" cy="150" rx="9" ry="12" fill="#f7b852"/>
+                <path d="M134 320 C152 292, 166 282, 182 268" stroke="#111" stroke-width="8" stroke-linecap="round" fill="none"/>
+                <path d="M302 267 C320 287, 342 296, 360 313" stroke="#111" stroke-width="8" stroke-linecap="round" fill="none"/>
+
+                <g class="mic" transform="translate(72 230)">
+                  <rect x="0" y="80" width="28" height="130" rx="12" fill="#f5dcd0"/>
+                  <path d="M15 80 C20 50, 65 36, 92 70 C100 82, 110 105, 110 128 C110 175, 72 205, 12 185 C-42 167, -42 102, 15 80 Z" fill="#dedbd7"/>
+                  <path d="M38 94 C57 64, 87 62, 98 66 C96 90, 84 130, 69 140 C53 150, 39 140, 38 94 Z" fill="#22262d"/>
+                  <circle cx="15" cy="80" r="18" fill="#111"/>
+                  <rect x="95" y="110" width="28" height="110" rx="13" fill="#5a4a39"/>
+                  <path d="M95 120 C120 110, 140 118, 155 135" stroke="#5a4a39" stroke-width="10" fill="none" stroke-linecap="round"/>
+                  <path d="M95 140 C130 135, 141 165, 160 192" stroke="#5a4a39" stroke-width="10" fill="none" stroke-linecap="round"/>
+                </g>
+              </g>
+            </svg>
+
+            <div class="music-line music-line-1"></div>
+            <div class="music-line music-line-2"></div>
+            <div class="music-line music-line-3"></div>
+          </div>
+
+          <div class="banner-wrap">
+            <div class="banner">
+              <span class="word word-primary">Musify</span>
+              <span class="word word-secondary">Enjoy Mousiqi</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="playlist-panel">
+          <h2>Naruto Songs Playlist</h2>
+          <ol>
+            <li>1. Naruto Main Theme</li>
+            <li>2. Sadness and Sorrow</li>
+            <li>3. Blue Bird</li>
+            <li>4. Silhouette</li>
+            <li>5. Go!!!</li>
+            <li>6. Wind</li>
+            <li>7. Hero's Come Back!!</li>
+            <li>8. Believe It</li>
+            <li>9. Strong and Strike</li>
+            <li>10. Diver</li>
+            <li>11. Know Know</li>
+            <li>12. Wherever You Are</li>
+          </ol>
+          <div class="eq-mini">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
